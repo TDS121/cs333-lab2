@@ -57,14 +57,18 @@ Done
    (Hint: a `switch` on the button's letter works well, and so does `if`/`else if`.)
    Watch out: the image and sound names don't match each other (`kick.png` vs `kick-bass.mp3`,
    `tom1.png` vs `tom-1.mp3`). Copy the real names.
-
+Done
 
 ## Part 2: the keyboard
 
 7. Make the keyboard play the drums too: pressing `w` plays the same sound as clicking the `w` button.
    One way: add a `keydown` listener to the whole `document`, and use `event.key` to see which key was pressed.
+Done
+
 8. Don't repeat yourself: clicking and typing should both call **the same function** that plays a sound
    for a given key. How did you organize that?
+Both listeners added pull a letter out of their event, `innerHTML` for clicks and event.key for keys
+
 9. Use `console.log` to see what's happening while you build this. Important! **Leave these in your code.**
 10. Comment your code in an educational way: not for the public, but to write down how everything works. I will be looking for this!
 11. Optional: make the button visibly react when played (hint: there's a `.pressed` class in the CSS, plus `classList` and `setTimeout`).
