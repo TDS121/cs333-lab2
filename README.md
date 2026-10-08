@@ -23,9 +23,13 @@ You'll submit all three links in Moodle (see the last step).
 
 1. Open `index.html` with live preview. Notice there's no `<script>` tag yet. Create your JS in
    `index.js` and add the `<script>` tag yourself. Where in the page should it go, and why?
-   (Hint: what happens if your script looks for the buttons before they exist?)
+   (Hint: what happens if your script looks for the buttons before they exist?) [x]
+The browser reads from top to bottom and runs the script when it reaches it. If `<script>` were in `<head>` then the buttons would not have been created. This would result in `querySelectAll(".drum")` would find nothing
+
 2. Add an event listener to **each** drum button. Use a **loop**, not seven copies of the same code.
-   (Hint: `document.querySelectorAll(".drum")`)
+   (Hint: `document.querySelectorAll(".drum")`) [x]
+Done
+
 3. Inside your listener, `console.log` which button was clicked. Your listener function receives an
    **event object**. Give it a parameter and look inside it:
    ```js
@@ -35,18 +39,25 @@ You'll submit all three links in Moodle (see the last step).
    ```
    What is `event.target`? (Try `console.log(event)` and poke around.) You'll use the same event
    object again in Part 2 for the keyboard.
+Done
+
 4. Add a drum sound to the listener. Start with **one** sound for every button:
    ```js
    let sound = new Audio("sounds/tom-1.mp3");   // relative path!
    sound.play();
    ```
+Done
+
 5. In `styles.css`, give each button a background image (`.w`, `.a`, `.s`, ...), using the files in `images/`.
    Note: paths in a CSS file are relative to **the CSS file**, not the HTML page.
    Check every filename against the real file *exactly* (case and hyphens count on the server).
+Done
+
 6. Give each button its own sound that matches its image, so you have a playable drum kit.
    (Hint: a `switch` on the button's letter works well, and so does `if`/`else if`.)
    Watch out: the image and sound names don't match each other (`kick.png` vs `kick-bass.mp3`,
    `tom1.png` vs `tom-1.mp3`). Copy the real names.
+
 
 ## Part 2: the keyboard
 
