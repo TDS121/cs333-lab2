@@ -7,13 +7,27 @@ for(let i = 0; i < drums.length; i++){
         let key = event.target.innerHTML;
         console.log("clicked: " + key);
         playSound(key);
+        flashButton(key);
     });
 }
 
 document.addEventListener("keydown", function(event){
     console.log("key pressed: " + event.key);
     playSound(event.key);
+    flashButton(event.key);
 });
+
+function flashButton(key){
+    for(let i = 0; i < drums.length; i++){
+        if(drums[i].innerHTML === key){
+            let button = drums[i];
+            button.classList.add("pressed");
+            setTimeout(function(){
+                button.classList.remove("pressed");
+            }, 100);
+        }
+    }
+}
 
 function playSound(key){
     switch(key){
