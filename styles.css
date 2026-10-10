@@ -55,6 +55,7 @@ footer a {
 .pressed {
   box-shadow: 0 3px 4px 0 #DBEDF3;
   opacity: 0.5;
+  transform: scale(0.9);   /* shrink the button while it is pressed */
 }
 
 .drum {
@@ -74,4 +75,5 @@ footer a {
   margin: 10px;
   background-color: white;
   background-size: cover;   /* makes your background image fill the button */
+  transition: transform 0.1s;   /* animate the shrink and grow back smoothly */
 }
